@@ -8,7 +8,7 @@ COPY ./requirements.txt .
 
 # timezone and init process, using Tsinghua alpine mirror
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories && \
-    apk add -U tzdata tini && \
+    apk add -U bash tzdata tini && \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     apk del tzdata
 
